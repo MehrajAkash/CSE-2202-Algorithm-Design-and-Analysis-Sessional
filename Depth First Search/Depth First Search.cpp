@@ -17,6 +17,8 @@ void dfs(int u){
 
     cout<<u<<endl;
 
+    return;
+
 }
 
 int main(){
