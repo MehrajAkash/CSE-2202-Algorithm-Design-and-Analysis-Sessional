@@ -108,3 +108,20 @@ int main()
 
     return 0;
 }
+
+/**
+probem link: https://lightoj.com/problem/back-to-underworld
+input:
+2
+2
+1 2
+2 3
+3
+1 2
+2 3
+4 2
+
+output:
+Case 1: 2
+Case 2: 3
+**/

@@ -64,6 +64,6 @@ input:
 3 5
 6 7
 
-output: 3
+output: 5
 **/
 
