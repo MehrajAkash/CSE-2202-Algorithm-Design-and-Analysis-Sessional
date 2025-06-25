@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+     
+       map<int,int>mp;
+       for(int i=0; i<nums.size(); i++){
+          mp[nums[i]]++;
+       }
+
+       vector< pair<int,int> >vpr;
+
+       for(auto x : mp){
+          vpr.push_back({x.second, x.first});
+       }
+
+       sort(vpr.rbegin(), vpr.rend());
+
+       vector<int>res;
+
+       for(int i=0;i<k; i++){
+          res.push_back(vpr[i].second);
+       }
+        return res;
+        
+    }
+};
+
+problem LinK:
+https://leetcode.com/problems/top-k-frequent-elements/description/?envType=problem-list-v2&envId=divide-and-conquer

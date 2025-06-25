@@ -1,0 +1,32 @@
+class Solution {
+public:
+
+     void heapify(vector<int>&arr, int i, int sz){
+
+        int left = 2*i+1;
+        int right = 2*i+2;
+        int large = i;
+
+        if( (arr[large]<arr[left]) && left<sz ){
+            large=left;
+        }
+
+        if( (arr[large]<arr[right]) && right<sz ){large=right;}
+
+        if(large!=i){
+            swap(arr[i],arr[large]);
+            heapify(arr,large,sz);
+        }
+    }
+
+
+    int findKthLargest(vector<int>& nums, int k) {
+             int sz = nums.size();
+            for(int i=sz/2 -1; i>=0; i--){
+                heapify(nums,i,sz);
+            }
+
+            return nums[k-1];
+    }
+};
+
