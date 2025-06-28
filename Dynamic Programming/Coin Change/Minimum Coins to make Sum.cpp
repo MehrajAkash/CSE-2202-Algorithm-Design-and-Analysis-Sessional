@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int>coins = {3,1,5};
+vector<int>coins = {1,3,4};
 int n, vis[10000005], dp[10000005];
 
 int solve(int m){
@@ -13,7 +13,9 @@ int solve(int m){
 
 	for(int i=0; i<coins.size(); i++){
 
-		res=min( res, 1+solve(m-coins[i]) );
+        if( m-coins[i] >= 0 ){
+            res=min( res, 1+solve(m-coins[i]) );
+        }
 
 	}
 	vis[m]=1;
