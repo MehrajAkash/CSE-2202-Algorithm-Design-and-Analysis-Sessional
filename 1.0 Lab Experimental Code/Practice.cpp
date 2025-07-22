@@ -1,5 +1,5 @@
 
-/*
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -37,7 +37,7 @@ return 0;
 }
 
 
-/*
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -68,7 +68,7 @@ int main(){
 return 0;
 }
 
-/*
+
 //Minimum way to make a sum using coins
 #include<bits/stdc++.h>
 using namespace std;
@@ -109,7 +109,7 @@ return 0;
 
 
 
-/*
+
 // total way to make a sum using coins
 #include<bits/stdc++.h>
 using namespace std;
@@ -146,7 +146,8 @@ int main(){
 }
 
 
-/*
+
+
 // Robot Coin Collecting problem
 #include<bits/stdc++.h>
 using namespace std;
@@ -203,7 +204,7 @@ return 0;
 }
 
 
-/*
+
 #include<bits/stdc++.h>
 using namespace std;
 int coinRow(vector<int>&coins){
@@ -233,7 +234,7 @@ int main(){
 return 0;
 }
 
-/*
+
 //knapSack(greedy)
 #include<bits/stdc++.h>
 using namespace std;
@@ -293,7 +294,7 @@ return 0;
 
 
 // Quick Sort
-/*
+
 #include<bits/stdc++.h>
 using namespace std;
  vector<int>arr={7,6,10,5,9,2,1,15,7};
@@ -343,7 +344,7 @@ int main(){
 
 
 
-/* 0/1 KnapSack
+0/1 KnapSack
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -375,7 +376,7 @@ return 0;
 
 
 
-/*
+
 /// MergeSort
 #include<bits/stdc++.h>
 using namespace std;
