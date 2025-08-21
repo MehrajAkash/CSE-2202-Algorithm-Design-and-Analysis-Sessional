@@ -34,4 +34,9 @@ int main() {
     cout << longestUniqueSubstr(s);
     return 0;
 }
-/// output: 5 [cbdea]
+/** output: 5 [cbdea]
+
+Time Complexity: O(n*26), the outer loop runs O(n) time,
+and the inner loop runs in O(26) in the worst case (considering all unique characters), 
+resulting in a total time complexity of O(n*26)
+**/
