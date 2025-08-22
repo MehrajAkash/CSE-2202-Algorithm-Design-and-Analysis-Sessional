@@ -2,9 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Print all subsets if there is atleast one subset of set[]
-// with sum equal to given sum
-bool flag = 0;
+// Print all subsets if there is atleast one subset of set[]  with sum equal to given sum
 void PrintSubsetSum(int i, int n, vector<int>& set, int targetSum, vector<int>& subset)
 {
     // targetSum is zero then there exist a subset. this for including elements
