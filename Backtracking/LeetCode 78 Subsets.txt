@@ -1,0 +1,28 @@
+class Solution {
+public:
+
+    void create(int i, vector<int>& nums, vector<int>&set, vector<vector<int>>&result ){
+
+        if( i==nums.size() ){
+            result.push_back(set);
+            return;
+        };
+
+        create( i+1, nums, set, result );
+
+        set.push_back(nums[i]);
+        
+        create(i+1, nums, set, result);
+        set.pop_back();
+    }
+
+    vector<vector<int>> subsets(vector<int>& nums) {
+
+        vector<vector<int>> result;
+        vector<int>set;
+
+        create(0, nums, set, result);
+
+     return result;    
+    }
+};
