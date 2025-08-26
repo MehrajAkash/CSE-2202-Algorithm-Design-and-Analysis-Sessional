@@ -1,0 +1,39 @@
+vector<int>adj[16];
+
+class Solution {
+public:
+
+    void dfs(int s, int n, vector<int>& setv,  vector<vector<int>>& result){
+
+        setv.push_back(s);
+
+        if(s == n-1){
+            result.push_back(setv);
+        }
+
+        for(auto x : adj[s] ){
+
+            dfs(x, n, setv, result);
+            setv.pop_back();
+        }
+    }
+
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+
+        vector<int>setv;
+        vector<vector<int>> result;
+        memset(adj, 0, sizeof(adj));
+
+        for(int i=0; i<graph.size(); i++){
+            for(int j=0; j<graph[i].size(); j++){
+
+                adj[i].push_back(graph[i][j]);
+            }
+        }
+
+        int n = graph.size();
+        dfs(0, n, setv, result);
+
+        return result;
+    }
+};
