@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minMoves2(vector<int>& nums) {
+        int n = nums.size();
+        int mid = n/2;
+
+        nth_element( nums.begin(), nums.begin()+ mid, nums.end() );
+
+        int result = 0;
+        for(int i=0; i<mid; i++){
+            result += (nums[mid]-nums[i]);
+        }
+        for(int i=mid+1; i<n; i++){
+            result += nums[i] - nums[mid];
+        }
+
+        return result;
+    }
+};
