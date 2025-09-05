@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    deque<int> d = {33, 1, 87, 1, 71, 1};
+
+    
+    auto min = min_element(d.begin(), d.end());
+
+  	cout << "Index: " << distance(d.begin(), min) <<endl;
+     cout<< min-d.begin() <<endl;
+    return 0;
+}
