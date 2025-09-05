@@ -8,6 +8,7 @@ bool detectCycle(vector<vector<int>> &adj, int u, vector<bool>&visited, vector<b
         return true;
 
     // If the node is already visited and not in recursion stack, no need to check again
+    // It means previously backtrack occured from this node, cz it has no adjacency node that create cycle..thus record false but visited true.
     if(visited[u])
         return false;
 
@@ -57,3 +58,4 @@ int main(){
 
 return 0;
 }
+
