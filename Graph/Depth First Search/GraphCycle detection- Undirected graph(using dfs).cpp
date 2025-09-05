@@ -40,7 +40,7 @@ bool isCyclic(int v, vector<vector<int>> &edges){
     // Check for cycles starting from every unvisited node
     for(int i=0; i<v; i++){
 
-        if( !visited[i] && detectCycle( adj, i, visited, record ) )
+        if( !visited[i] && detectCycle( adj, i, visited, record ) ) // !visiited[u] -means previously not vistied- !false = true
             return true; // cycle found
 
     }
@@ -58,4 +58,5 @@ int main(){
 
 return 0;
 }
+
 
