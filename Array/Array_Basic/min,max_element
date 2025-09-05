@@ -1,13 +1,13 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
-    deque<int> d = {33, 1, 87, 1, 71, 1};
+    deque<int> d = {33, 45, 8, 71};
 
-    
-    auto min = min_element(d.begin(), d.end());
+    cout<< *min_element(d.begin(), d.end()) <<endl; // 8  T.C: O(n)
 
-  	cout << "Index: " << distance(d.begin(), min) <<endl;
-     cout<< min-d.begin() <<endl;
+    auto adress = min_element(d.begin(), d.end());
+    cout<<"Index Num: "<< adress - d.begin() <<endl; // index 2
+
     return 0;
 }
