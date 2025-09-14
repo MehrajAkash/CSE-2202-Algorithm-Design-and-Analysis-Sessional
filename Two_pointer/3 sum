@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef vector<int> vi;
+typedef long long ll;
+
+void threeSum(vi& arr, int target)
+{
+    int cnt=0, n=arr.size();
+    sort( arr.begin(), arr.end() );
+
+    for(auto x : arr)cout<<x<<" ";
+    cout<<endl;
+
+    //fixed the first element between 0 to n-2 index
+    for(int i=0; i<n-2; i++)
+    {
+        int reqrSum = target - arr[i];
+        int left=i+1, right=n-1;
+
+        while(left<right)
+        {
+
+            if( arr[left] + arr[right] == reqrSum )
+            {
+                //cout<<arr[i]<<" "<<arr[left]<<" "<<arr[right]<<endl;
+                cnt++; // Counts all possible trio
+                break;
+            }
+            else if( arr[left]+arr[right] < reqrSum ){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+
+    }
+    cout<<"Cnt: "<<cnt<<endl; // all trio's sum equal to target
+}
+
+int main(){
+
+    vi arr = { 1, 2, 45, 6, 10, 8 };
+    int target = 13;
+
+    threeSum(arr, target);
+
+return 0;
+}
