@@ -1,0 +1,28 @@
+class Solution {
+public:
+    string removeStars(string s) {
+        stack<char>st;
+        int sz = s.size();
+
+        for(int i=0; i<sz; i++){
+            if(s[i]=='*'){
+                st.pop();
+            }
+            else{
+                st.push(s[i]);
+            }
+        }
+
+        s="";
+        while( !st.empty() ){
+            s += st.top();
+            st.pop();
+        }
+        reverse(s.begin(), s.end());
+        
+        return s;
+    }
+};
+
+Input: s = "leet**cod*e"
+Output: "lecoe"
