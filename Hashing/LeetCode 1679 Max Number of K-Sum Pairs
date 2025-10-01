@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+         
+        int sz = nums.size(), complement, op=0;
+        unordered_map<int, int>ump;
+
+        for(int i=0; i<sz; i++){
+
+            complement = k - nums[i];
+            if( ump.count(complement) && ump[complement]>0 ){
+                op++;
+                ump[complement]--;
+            }
+            else{
+                ump[nums[i]]++;
+            }
+        }
+
+        return op;
+    }
+};
