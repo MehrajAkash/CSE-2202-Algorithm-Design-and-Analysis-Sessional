@@ -1,0 +1,57 @@
+class Solution {
+public:
+    int orangesRotting(vector<vector<int>>& grid) {
+        int rsz = grid.size();
+        int csz = grid[0].size();
+
+        vector<vector<int>> vis(rsz, vector<int>(csz, false));
+        queue< pair< pair<int,int>, int > > q;
+
+        for( int i=0; i<rsz; i++){
+            for(int j=0; j<csz; j++){
+                if(grid[i][j]==2){
+                    q.push({ {i,j}, 0 });
+                }
+            }
+        }
+
+        int t=0, cnt=0;
+        // bfs
+        while( !q.empty() ){
+
+            int r = q.front().first.first;
+            int c = q.front().first.second;
+            t = q.front().second;
+            q.pop();
+
+            if( r-1>=0 && grid[r-1][c]==1 && vis[r-1][c]==false ){
+                q.push({ {r-1, c}, t+1 } );
+                vis[r-1][c]=true;
+            }
+            if( c+1<csz && grid[r][c+1]==1 && vis[r][c+1]==false ){
+                q.push({ {r, c+1}, t+1 });
+                vis[r][c+1]=true;
+            }
+            if( r+1<rsz && grid[r+1][c]==1 && vis[r+1][c]==false ){
+                q.push({ {r+1, c}, t+1 } );
+                vis[r+1][c]=true;
+            }
+            if( c-1>=0 && grid[r][c-1]==1 && vis[r][c-1]==false ){
+                q.push({ {r, c-1}, t+1 } );
+                vis[r][c-1]=true;
+            }
+
+        }
+        cout<<t<<endl;
+
+        for( int i=0; i<rsz; i++){
+            for(int j=0; j<csz; j++){
+                if(grid[i][j]==1 && !vis[i][j]){
+                   return -1;
+                }
+            }
+        }
+
+        return t;
+    }
+};
